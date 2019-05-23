@@ -7,27 +7,29 @@ class Hero:
         name:
         starting_health:
         current_health:
-         '''
-         self.name = name
-         self.starting_health = starting_health
-         self.current_health = current_health
-         self.abilities = list()
-
-
+        '''
+        self.name = name
+        self.starting_health = starting_health
+        self.current_health = current_health
+        self.abilities = list()
 
     def add_ability(self, ability):
         ''' Add ability to abilities list '''
-        pass
+        return abilities.append(ability)
 
     def attack(self):
         '''
         Calculates damage from list of abilities.
-
         This method should call Ability.attack()
         on every ability in self.abilities and
         return the total.
         '''
-        pass
+        total = 0
+        for ability in self.abilities:
+            ability.attack()
+            total += 1
+        return total
+
 
     def take_damage(self, damage):
         '''
