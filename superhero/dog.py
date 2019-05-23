@@ -1,13 +1,16 @@
+
+# simple Dog class
 class Dog:
     def __init__(self, name, breed):
         self.name = name
         self.breed = breed
 
     def bark(self):
-        print("Woof")
+        """
+        Prints Woof when called
+        """
+        print("{} says Woof!".format(self.name))
 
 
-my_dog = Dog("Rex", "SuperDog")
-# print(my_dog)
-print(my_dog.breed)
+
 
