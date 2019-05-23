@@ -8,7 +8,11 @@ class Hero:
         starting_health:
         current_health:
          '''
-         pass
+         self.name = name
+         self.starting_health = starting_health
+         self.current_health = current_health
+         self.abilities = list()
+
 
 
     def add_ability(self, ability):
