@@ -7,5 +7,7 @@ from dog import Dog
 other_dog = Dog("Annie", "Cutie")
 print(other_dog.name)
 
-
+dog1 = Dog("Max", "Hunter")
+dog2 = Dog("Jim", "LazyBone")
+dog3 = Dog("Zoozie", "Fluff")
 
