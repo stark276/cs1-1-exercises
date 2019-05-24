@@ -10,7 +10,7 @@ class Hero:
         '''
         self.name = name
         self.starting_health = starting_health
-        self.current_health = current_health
+        self.current_health = starting_health
         self.abilities = list()
 
     def add_ability(self, ability):
@@ -54,11 +54,8 @@ class Hero:
         '''
         Runs a loop to attack the opponent until someone dies.
         '''
-        # if self.abilities is None or opponent.abilities is None:
-        # while self.current_health != 0 or opponent.current_health != 0:
-            # self.attack(opponent)
-        print("{} vs {}. FIGHT!".format(self.name, opponent.name)
-        if self.abilities is None and opponent.abilities is None:
+        print("{} vs {}. FIGHT!".format(self.name, opponent.name))
+        if self.abilities == 0 and opponent.abilities == 0:
             self.take_damage(0)
             opponent.take_damage(0)
             print("Both heroes don't have abilities")
@@ -90,4 +87,5 @@ class Ability:
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
-    pass
+    hero = Hero("Wonder Woman")
+    print(hero.attack())
