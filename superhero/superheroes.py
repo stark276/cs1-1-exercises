@@ -67,9 +67,9 @@ class Hero:
                 self.take_damage(opponent.attack())
                 opponent.take_damage(self.attack())
                 if self.is_alive is False:
-                    print("{} won!".format(opponent.name))
+                    print("{} killed {}!".format(opponent.name, self.name))
                 else:
-                    print("{} won!".format(self.name))
+                    print("{} killed {}!".format(self.name, opponent.name))
 
 class Ability:
     def __init__(self, name, max_damage):
