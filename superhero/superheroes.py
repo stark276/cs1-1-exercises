@@ -36,7 +36,8 @@ class Hero:
         This method should update self.current_health
         with the damage that is passed in.
         '''
-        pass
+        self.current_health -= self.damage
+        return self.current_health
 
     def is_alive(self):  
         '''
@@ -44,7 +45,10 @@ class Hero:
         return true if the hero is alive
         or false if they are not.
         '''
-        pass
+        if self.current_health != 0:
+            return True
+        else:
+            return False
 
     def fight(self, opponent):  
         '''
