@@ -17,7 +17,7 @@ class Hero:
 
     def add_ability(self, ability):
         ''' Add ability to abilities list '''
-        return abilities.append(ability)
+        self.abilities.append(ability)
 
     def attack(self):
         '''
@@ -26,11 +26,10 @@ class Hero:
         on every ability in self.abilities and
         return the total.
         '''
-        total = 0
+        total_damage = 0
         for ability in self.abilities:
-            ability.attack()
-            total += 1
-        return total
+            total_damage += ability.attack()
+        return total_damage
 
 
     def take_damage(self, damage):
@@ -57,18 +56,21 @@ class Hero:
         Runs a loop to attack the opponent until someone dies.
         '''
         print("{} vs {}. FIGHT!".format(self.name, opponent.name))
-        if self.abilities == 0 and opponent.abilities == 0:
-            self.take_damage(0)
-            opponent.take_damage(0)
-            print("Both heroes don't have abilities")
-        else:
-            while self.is_alive is True and opponent.is_alive is True:
-                self.take_damage(opponent.attack())
-                opponent.take_damage(self.attack())
-                if self.is_alive is False:
-                    print("{} killed {}!".format(opponent.name, self.name))
-                else:
-                    print("{} killed {}!".format(self.name, opponent.name))
+        # if self.abilities == 0 and opponent.abilities == 0:
+        #     print("here1")
+        #     self.take_damage(0)
+        #     opponent.take_damage(0)
+        #     print("Both heroes don't have abilities")
+        # else:
+        print("here1")
+        while (self.is_alive is True and opponent.is_alive is True):
+            print("here2")
+            self.take_damage(opponent.attack())
+            opponent.take_damage(self.attack())
+            if self.is_alive is False:
+                print("{} killed {}!".format(opponent.name, self.name))
+            elif opponent.is_alive is False:
+                print("{} killed {}!".format(self.name, opponent.name))
 
 class Ability:
     def __init__(self, name, attack_strength):
@@ -81,10 +83,11 @@ class Ability:
 
     def attack(self):
         '''
-        Return a random attack value
-        between 0 and max_damage.
+       Use random.randint(a, b) to select a random attack value.
+        Return an attack value between 0 and the full attack.
         '''
-        pass
+        attack_value = random.randint(0, self.attack_strength)
+        return attack_value
 
 
 if __name__ == "__main__":
@@ -92,3 +95,13 @@ if __name__ == "__main__":
     # this block is executed.
     hero = Hero("Wonder Woman")
     print(hero.attack())
+    ability = Ability("Divine Speed", 20)
+    hero.add_ability(ability)
+    print(hero.attack())
+    new_ability = Ability("Super Human Strength", 30)
+    hero.add_ability(new_ability)
+    print(hero.attack())
+    hero2 = Hero("Jodie Foster")
+    ability2 = Ability("Science", 800)
+    hero2.add_ability(ability2)
+    hero.fight(hero2)
