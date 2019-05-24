@@ -36,7 +36,7 @@ class Hero:
         This method should update self.current_health
         with the damage that is passed in.
         '''
-        self.current_health -= self.damage
+        self.current_health -= damage
         return self.current_health
 
     def is_alive(self):  
@@ -45,7 +45,7 @@ class Hero:
         return true if the hero is alive
         or false if they are not.
         '''
-        if self.current_health != 0:
+        if self.current_health > 0:
             return True
         else:
             return False
@@ -54,7 +54,22 @@ class Hero:
         '''
         Runs a loop to attack the opponent until someone dies.
         '''
-        pass
+        # if self.abilities is None or opponent.abilities is None:
+        # while self.current_health != 0 or opponent.current_health != 0:
+            # self.attack(opponent)
+        print("{} vs {}. FIGHT!".format(self.name, opponent.name)
+        if self.abilities is None and opponent.abilities is None:
+            self.take_damage(0)
+            opponent.take_damage(0)
+            print("Both heroes don't have abilities")
+        else:
+            while self.is_alive is True and opponent.is_alive is True:
+                self.take_damage(opponent.attack())
+                opponent.take_damage(self.attack())
+                if self.is_alive is False:
+                    print("{} won!".format(opponent.name))
+                else:
+                    print("{} won!".format(self.name))
 
 class Ability:
     def __init__(self, name, max_damage):
