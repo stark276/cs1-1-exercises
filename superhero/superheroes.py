@@ -1,3 +1,5 @@
+import random
+
 class Hero:
     def __init__(self, name, starting_health=100):
         '''
@@ -69,12 +71,13 @@ class Hero:
                     print("{} killed {}!".format(self.name, opponent.name))
 
 class Ability:
-    def __init__(self, name, max_damage):
+    def __init__(self, name, attack_strength):
         '''
         Initialize the values passed into this
         method as instance variables.
          '''
-        pass
+        self.name = name
+        self.attack_strength = attack_strength
 
     def attack(self):
         '''
