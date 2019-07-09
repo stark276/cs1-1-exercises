@@ -56,21 +56,21 @@ class Hero:
         Runs a loop to attack the opponent until someone dies.
         '''
         print("{} vs {}. FIGHT!".format(self.name, opponent.name))
-        # if self.abilities == 0 and opponent.abilities == 0:
-        #     print("here1")
-        #     self.take_damage(0)
-        #     opponent.take_damage(0)
-        #     print("Both heroes don't have abilities")
+        if self.abilities == 0 or opponent.abilities == 0:
+            print("here1")
+            # self.take_damage(0)
+            # opponent.take_damage(0)
+            # print("Both heroes don't have abilities")
         # else:
-        print("here1")
-        while (self.is_alive is True and opponent.is_alive is True):
-            print("here2")
-            self.take_damage(opponent.attack())
-            opponent.take_damage(self.attack())
-            if self.is_alive is False:
-                print("{} killed {}!".format(opponent.name, self.name))
-            elif opponent.is_alive is False:
-                print("{} killed {}!".format(self.name, opponent.name))
+        # print("here1")
+        # while (self.is_alive is True and opponent.is_alive is True):
+        #     print("here2")
+        #     self.take_damage(opponent.attack())
+        #     opponent.take_damage(self.attack())
+        #     if self.is_alive is False:
+        #         print("{} killed {}!".format(opponent.name, self.name))
+        #     elif opponent.is_alive is False:
+        #         print("{} killed {}!".format(self.name, opponent.name))
 
 class Ability:
     def __init__(self, name, attack_strength):
@@ -91,8 +91,7 @@ class Ability:
 
 
 if __name__ == "__main__":
-    # If you run this file from the terminal
-    # this block is executed.
+
     hero = Hero("Wonder Woman")
     print(hero.attack())
     ability = Ability("Divine Speed", 20)
