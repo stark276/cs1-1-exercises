@@ -81,6 +81,9 @@ class Ability:
         self.name = name
         self.attack_strength = attack_strength
 
+    def __str__(self):
+        return f'This is ability name {self.name}'
+
     def attack(self):
         '''
        Use random.randint(a, b) to select a random attack value.
@@ -97,6 +100,7 @@ if __name__ == "__main__":
     ability = Ability("Divine Speed", 20)
     hero.add_ability(ability)
     print(hero.attack())
+    print(hero.name)
     new_ability = Ability("Super Human Strength", 30)
     hero.add_ability(new_ability)
     print(hero.attack())
