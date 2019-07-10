@@ -14,7 +14,7 @@ class HeroTest(unittest.TestCase):
     def test_add_ability(self):
         hero = Hero("Superman")
         ability1 = Ability("Speed", 200)
-        assert hero.abilities == [ability1]
+        assert hero.abilities.append(ability1)
         # assert hero.abilities.append("Power")
         # assert hero.abilities.append("Low IQ")
         # assert hero.abilities == ["Speed", "Power", "Low IQ"]
