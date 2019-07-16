@@ -30,5 +30,8 @@ class HeroTest(unittest.TestCase):
     def test_is_alive(self):
         pass
 
+    def test_fight(self):
+        pass
+
 if __name__ == "__main__":
     unittest.main()
