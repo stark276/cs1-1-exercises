@@ -11,6 +11,7 @@ class HeroTest(unittest.TestCase):
         assert hero.current_health == hero.starting_health
         assert hero.abilities == []
 
+    #TODO: double check this method
     def test_add_ability(self):
         hero = Hero("Superman")
         ability1 = Ability("Speed", 200)
@@ -19,6 +20,9 @@ class HeroTest(unittest.TestCase):
         # assert hero.abilities.append("Low IQ")
         # assert hero.abilities == ["Speed", "Power", "Low IQ"]
         assert len(hero.abilities) == 1
+
+    def test_attack(self):
+        pass
 
 if __name__ == "__main__":
     unittest.main()
